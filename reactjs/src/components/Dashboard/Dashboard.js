@@ -5,8 +5,6 @@ import PetsIcon from '@mui/icons-material/Pets';
 import { styled } from '@mui/material/styles';
 
 import './Dashboard.css'
-import {useSelector} from "react-redux";
-import CreateFoundPet from "../Pets/Founder/CreateFoundPet";
 import { Link } from 'react-router-dom'
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -14,14 +12,10 @@ const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   padding: theme.spacing(1),
   textAlign: 'center',
-  // color: theme.palette.text.secondary,
 }));
 
 export default function RowAndColumnGap() {
 
-    const user = useSelector((state) => state.user.user)
-
-    console.log(user)
   return (
         <Container component="main" maxWidth='xl'>
       <Box>

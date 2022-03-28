@@ -1,18 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom"
-import {Container, Grid, Paper, Pagination} from '@mui/material';
+import {Container, Grid} from '@mui/material';
 import axios from "axios";
-import CardFound from "../Card/CardFound";
+import CardFound from "../components/Card/CardFound";
 
 
-const flexContainer = {
-  display: 'flex',
-  flexDirection: 'row',
-  padding: 0,
-
-};
-
-const Founder = () => {
+const FounderListPage = () => {
   const [founderpets, setFounderpets] = useState([])
 
 
@@ -24,7 +16,6 @@ const Founder = () => {
 
 
 
-// found
   return(
      <>
          <Container>
@@ -44,4 +35,4 @@ const Founder = () => {
 //
 
 
-export default Founder;
+export default FounderListPage;

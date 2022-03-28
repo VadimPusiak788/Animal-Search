@@ -18,7 +18,7 @@ class TestModelPet(TestCase):
         pet = LostPet.objects.create(
             owner=user, type='CT', gender='UNK',
             latitude=25.55456, longitude=52.561236,
-            age=5, date='2022-10-05', name='Lost'
+            age=5, date='2022-10-05', name='LostListPage'
         )
         pet.save()
 

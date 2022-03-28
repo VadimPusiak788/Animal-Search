@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom"
-import {List, ListItem, ListItemText, Typography, Paper, Box, Container, Grid} from '@mui/material';
-import axios from "axios";
-import axiosInstance from "../../../../utils/axiosApi";
-import CardFound from "../../../Card/CardFound";
-import MyCardLost from "../../../Card/MyCardLost";
+import {Container, Grid} from '@mui/material';
+import axiosInstance from "../utils/axiosApi";
+import MyCardLost from "../components/Card/MyCardLost";
 
 
 
-const MyLostRequest = () => {
+const MyLostRequestPage= () => {
 
     const [lostpets, setLostpets] = useState([])
 
@@ -42,4 +39,4 @@ const MyLostRequest = () => {
   );
 }
 
-export default MyLostRequest;
+export default MyLostRequestPage;

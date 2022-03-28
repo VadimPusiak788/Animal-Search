@@ -2,17 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom"
 import {List, ListItem, ListItemText, Typography, Paper, Box, Grid, Pagination, Container} from '@mui/material';
 import axios from "axios";
-import CardLost from "../Card/CardLost";
+import CardLost from "../components/Card/CardLost";
 
 
-const flexContainer = {
-  display: 'flex',
-  flexDirection: 'row',
-  padding: 0,
-
-};
-
-const Lost = () => {
+const LostListPage = () => {
   const [lost, setLostpets] = useState([])
 
 
@@ -37,4 +30,4 @@ const Lost = () => {
   );
 }
 
-export default Lost;
+export default LostListPage;

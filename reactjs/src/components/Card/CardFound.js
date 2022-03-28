@@ -23,11 +23,6 @@ const CardFound = (props) => {
                         {props.value.type}
                     </Typography>
                     <Typography>
-                        {/*{new Intl.DateTimeFormat("en-us", {*/}
-                        {/*    year: "numeric",*/}
-                        {/*    month: "long",*/}
-                        {/*    day: "2-digit"*/}
-                        {/*  }).format(props.value.date)}*/}
                          Date found: {props.value.date}
                     </Typography>
                 </CardContent>

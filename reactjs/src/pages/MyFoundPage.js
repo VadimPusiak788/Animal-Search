@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom"
-import {List, ListItem, ListItemText, Typography, Paper, Box, Container, Grid} from '@mui/material';
-import axios from "axios";
-import axiosInstance from "../../../../utils/axiosApi";
-import CardFound from "../../../Card/CardFound";
-import MyCardFound from "../../../Card/MyCardFound";
+import {Container, Grid} from '@mui/material';
+import axiosInstance from "../utils/axiosApi";
+import MyCardFound from "../components/Card/MyCardFound";
 
 
 
-const MyFoundRequest = () => {
+const MyFoundRequestPage = () => {
 
     const [founderpets, setFounderpets] = useState([])
 
@@ -42,4 +39,4 @@ const MyFoundRequest = () => {
   );
 }
 
-export default MyFoundRequest;
+export default MyFoundRequestPage;
