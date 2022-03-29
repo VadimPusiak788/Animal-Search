@@ -10,16 +10,8 @@ import {useDispatch, useSelector} from "react-redux";
 
 
 
-function LocationMarker(props) {
+function LocationMarker() {
   const [position, setPosition] = useState(null)
-
-  // useEffect(() => {
-  //     console.log(props.props, 'df')
-  //     if (props.props.coordinate ){
-  //         console.log('fd')
-  //         setPosition(props.props.coordinate)
-  //     }
-  // }, [props])
 
   const dispatch = useDispatch();
 
@@ -38,7 +30,7 @@ function LocationMarker(props) {
   )
 }
 
-const CreateMapFound = (props) =>{
+const CreateMapFound = () =>{
     return(
         <div id="map">
        <MapContainer center={{ lat: 50.505, lng: 30.09 }} zoom={10}  style={{ height: '50vh', width: '20wh' }}>
@@ -46,7 +38,7 @@ const CreateMapFound = (props) =>{
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-    <LocationMarker props={props}/>
+    <LocationMarker/>
     </MapContainer>
         </div>
     )

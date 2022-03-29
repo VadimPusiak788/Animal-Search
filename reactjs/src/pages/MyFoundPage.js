@@ -10,13 +10,13 @@ const MyFoundRequestPage = () => {
     const [founderpets, setFounderpets] = useState([])
 
     const getData = () => {
-        axiosInstance.get('http://127.0.0.1:8000/api/main/request_user/found/')
+        axiosInstance.get('http://djangoanimal-env.eba-emiqdphm.eu-central-1.elasticbeanstalk.com/api/main/request_user/found/')
           .then(response => setFounderpets(response.data))
           .catch(err => console.log(err.response))
     }
 
     useEffect( () =>{
-      axiosInstance.get('http://127.0.0.1:8000/api/main/request_user/found/')
+      axiosInstance.get('http://djangoanimal-env.eba-emiqdphm.eu-central-1.elasticbeanstalk.com/api/main/request_user/found/')
           .then(response => setFounderpets(response.data))
           .catch(err => console.log(err.response))
     }, [])

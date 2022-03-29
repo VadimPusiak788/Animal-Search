@@ -1,11 +1,8 @@
 import React, {useState, useEffect, useMemo} from 'react';
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 
 import {
-    FormLabel,
     FormControl,
-    FormControlLabel,
-    Radio,
     Grid,
     Button,
     Paper,
@@ -19,7 +16,6 @@ import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DatePicker from '@mui/lab/DatePicker';
 import TextField from "../../Form/TextField";
 
-import CreateMapFound from "../../map/CreateMapFound";
 import axiosInstance from "../../../utils/axiosApi";
 import {useNavigate, useParams} from "react-router-dom";
 import moment from "moment";
@@ -83,7 +79,7 @@ const EditFoundPet = () => {
         formData.append('age', data.age);
         formData.append('description', data.description);
 
-        axiosInstance.patch(`http://127.0.0.1:8000/api/main/request_user/found/${id}/`, formData, config)
+        axiosInstance.patch(`http://djangoanimal-env.eba-emiqdphm.eu-central-1.elasticbeanstalk.com/api/main/request_user/found/${id}/`, formData, config)
             .then((res) => {
                 console.log(res.data);
                 navigate("/");

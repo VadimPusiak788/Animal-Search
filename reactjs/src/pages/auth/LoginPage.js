@@ -27,7 +27,7 @@ const LoginPage = () => {
 
     const onSubmit = (data) => {
         // e.preventDefault()
-        axios.post('http://127.0.0.1:8000/api/auth/login/', {
+        axios.post('http://djangoanimal-env.eba-emiqdphm.eu-central-1.elasticbeanstalk.com/api/auth/login/', {
             username: data.username,
             password: data.password
         }).then(response => {

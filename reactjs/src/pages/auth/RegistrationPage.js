@@ -36,7 +36,7 @@ const RegistrationPage = () => {
     console.log(password.current, 'f')
     const onSubmit = (data) => {
 
-        axios.post('http://127.0.0.1:8000/api/auth/registration/', {
+        axios.post('http://djangoanimal-env.eba-emiqdphm.eu-central-1.elasticbeanstalk.com/api/auth/registration/', {
             username: data.username,
             password1: data.password1,
             password2: data.password2,

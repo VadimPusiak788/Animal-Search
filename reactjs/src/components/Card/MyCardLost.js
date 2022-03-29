@@ -12,7 +12,7 @@ import axiosInstance from "../../utils/axiosApi";
 const MyCardLost = (props) => {
 
     const deleteItem = (id) => {
-        axiosInstance.delete(`http://127.0.0.1:8000/api/main/request_user/lost/${id}`)
+        axiosInstance.delete(`http://djangoanimal-env.eba-emiqdphm.eu-central-1.elasticbeanstalk.com/api/main/request_user/lost/${id}`)
             .then(() => props.getData())
             .catch(err => console.log(err.response))
     }

@@ -81,7 +81,7 @@ const EditLostPet = () => {
         formData.append('age', data.age);
         formData.append('description', data.description);
 
-        axiosInstance.patch(`http://127.0.0.1:8000/api/main/request_user/lost/${id}/`, formData, config)
+        axiosInstance.patch(`http://djangoanimal-env.eba-emiqdphm.eu-central-1.elasticbeanstalk.com/api/main/request_user/lost/${id}/`, formData, config)
             .then((res) => {
                 console.log(res.data);
                 navigate("/");

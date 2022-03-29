@@ -10,7 +10,7 @@ const LostListPage = () => {
 
 
   useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/main/lost_pet').then(response => setLostpets(response.data)).catch(err => console.log(err))
+        axios.get('http://djangoanimal-env.eba-emiqdphm.eu-central-1.elasticbeanstalk.com/api/main/lost_pet').then(response => setLostpets(response.data)).catch(err => console.log(err))
     }, [])
 
   return(

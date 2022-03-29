@@ -60,7 +60,7 @@ const CreateFoundPet = () => {
         formData.append('age', data.age)
         formData.append('description', data.description)
 
-        axiosInstance.post('http://127.0.0.1:8000/api/main/create_found_pet/', formData, config)
+        axiosInstance.post('http://djangoanimal-env.eba-emiqdphm.eu-central-1.elasticbeanstalk.com/api/main/create_found_pet/', formData, config)
             .then((res) => {
                 console.log(res.data);
                 navigate("/");

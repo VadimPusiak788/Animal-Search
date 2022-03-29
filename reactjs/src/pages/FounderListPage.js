@@ -9,7 +9,7 @@ const FounderListPage = () => {
 
 
   useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/main/founder_pet')
+        axios.get('http://djangoanimal-env.eba-emiqdphm.eu-central-1.elasticbeanstalk.com/api/main/founder_pet')
             .then(response => setFounderpets(response.data))
             .catch(err => console.log(err))
     }, [])
