@@ -4,8 +4,8 @@ name: CI-CD-Pipeline-to-AWS-ElasticBeanstalk
 
 env:
   EB_S3_BUCKET_NAME:    "anamalsearchbucket"
-  EB_APPLICATION_NAME:  "Animal Search"
-  EB_ENVIRONMENT_NAME:  "Animalsearch-env"
+  EB_APPLICATION_NAME:  "Django_Animal"
+  EB_ENVIRONMENT_NAME:  "Djangoanimal-env"
   DEPLOY_PACKAGE_NAME:  "django-app-animal-${{ github.sha }}.zip"
   AWS_REGION_NAME:      "eu-central-1"
 
