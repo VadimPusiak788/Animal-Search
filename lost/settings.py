@@ -23,12 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-x)&gl!%dfdwwu41*lu+mlu&lm4^6b*ranp9n4fu12+$qbp6yp!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "http://djangoanimal-env.eba-emiqdphm.eu-central-1.elasticbeanstalk.com:3000"
 ]
 
 # Application definition
