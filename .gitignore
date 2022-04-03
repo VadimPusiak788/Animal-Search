@@ -12,5 +12,4 @@ package-lock.json
 reactjs/package.json
 reactjs/package-lock.json
 reactjs/node_modules
-reactjs/build
 node_modules
