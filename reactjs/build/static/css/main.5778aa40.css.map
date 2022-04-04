@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.5778aa40.css","mappings":"AAAA,SACI,YACJ,CCFA,IACI,SACJ","sources":["App.css","components/Dashboard/Dashboard.css"],"sourcesContent":[".wrapper {\r\n    padding: 20px;\r\n}","img{\r\n    width: 75%;\r\n}"],"names":[],"sourceRoot":""}
