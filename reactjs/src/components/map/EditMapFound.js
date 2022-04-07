@@ -6,7 +6,7 @@ import {
   TileLayer,
   useMapEvents,
 } from 'react-leaflet'
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 
 
 

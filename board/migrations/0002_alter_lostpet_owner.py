@@ -9,13 +9,17 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('board', '0001_initial'),
+        ("board", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='lostpet',
-            name='owner',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='lost_pet_user', to=settings.AUTH_USER_MODEL),
+            model_name="lostpet",
+            name="owner",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="lost_pet_user",
+                to=settings.AUTH_USER_MODEL,
+            ),
         ),
     ]

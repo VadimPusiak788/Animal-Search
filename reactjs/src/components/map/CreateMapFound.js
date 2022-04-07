@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react'
+import {useState} from 'react'
 import {
   MapContainer,
   Marker,
@@ -6,20 +6,12 @@ import {
   TileLayer,
   useMapEvents,
 } from 'react-leaflet'
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 
 
 
-function LocationMarker(props) {
+function LocationMarker() {
   const [position, setPosition] = useState(null)
-
-  // useEffect(() => {
-  //     console.log(props.props, 'df')
-  //     if (props.props.coordinate ){
-  //         console.log('fd')
-  //         setPosition(props.props.coordinate)
-  //     }
-  // }, [props])
 
   const dispatch = useDispatch();
 

@@ -16,40 +16,178 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='LostPet',
+            name="LostPet",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('type', models.CharField(choices=[('CT', 'Cat'), ('DG', 'Dog'), ('RB', 'Rabbit'), ('BD', 'Bird'), ('TR', 'Tortoise'), ('OTH', 'Other')], default='CT', max_length=8)),
-                ('image', models.ImageField(default='media/pet/img.png', upload_to='media')),
-                ('latitude', models.FloatField(validators=[django.core.validators.MinValueValidator(-90), django.core.validators.MaxValueValidator(90)])),
-                ('longitude', models.FloatField(validators=[django.core.validators.MinValueValidator(-180), django.core.validators.MaxValueValidator(180)])),
-                ('age', models.IntegerField(validators=[django.core.validators.MinValueValidator(1), django.core.validators.MaxValueValidator(30)])),
-                ('date', models.DateField()),
-                ('description', models.TextField()),
-                ('gender', models.CharField(choices=[('ML', 'Male'), ('FM', 'Female'), ('UNK', 'Unknown')], default='ML', max_length=8)),
-                ('name', models.CharField(max_length=56)),
-                ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='lost_pet', to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "type",
+                    models.CharField(
+                        choices=[
+                            ("CT", "Cat"),
+                            ("DG", "Dog"),
+                            ("RB", "Rabbit"),
+                            ("BD", "Bird"),
+                            ("TR", "Tortoise"),
+                            ("OTH", "Other"),
+                        ],
+                        default="CT",
+                        max_length=8,
+                    ),
+                ),
+                (
+                    "image",
+                    models.ImageField(
+                        default="media/pet/img.png", upload_to="media"
+                    ),
+                ),
+                (
+                    "latitude",
+                    models.FloatField(
+                        validators=[
+                            django.core.validators.MinValueValidator(-90),
+                            django.core.validators.MaxValueValidator(90),
+                        ]
+                    ),
+                ),
+                (
+                    "longitude",
+                    models.FloatField(
+                        validators=[
+                            django.core.validators.MinValueValidator(-180),
+                            django.core.validators.MaxValueValidator(180),
+                        ]
+                    ),
+                ),
+                (
+                    "age",
+                    models.IntegerField(
+                        validators=[
+                            django.core.validators.MinValueValidator(1),
+                            django.core.validators.MaxValueValidator(30),
+                        ]
+                    ),
+                ),
+                ("date", models.DateField()),
+                ("description", models.TextField()),
+                (
+                    "gender",
+                    models.CharField(
+                        choices=[
+                            ("ML", "Male"),
+                            ("FM", "Female"),
+                            ("UNK", "Unknown"),
+                        ],
+                        default="ML",
+                        max_length=8,
+                    ),
+                ),
+                ("name", models.CharField(max_length=56)),
+                (
+                    "owner",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="lost_pet",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
             options={
-                'abstract': False,
+                "abstract": False,
             },
         ),
         migrations.CreateModel(
-            name='FounderPet',
+            name="FounderPet",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('type', models.CharField(choices=[('CT', 'Cat'), ('DG', 'Dog'), ('RB', 'Rabbit'), ('BD', 'Bird'), ('TR', 'Tortoise'), ('OTH', 'Other')], default='CT', max_length=8)),
-                ('image', models.ImageField(default='media/pet/img.png', upload_to='media')),
-                ('latitude', models.FloatField(validators=[django.core.validators.MinValueValidator(-90), django.core.validators.MaxValueValidator(90)])),
-                ('longitude', models.FloatField(validators=[django.core.validators.MinValueValidator(-180), django.core.validators.MaxValueValidator(180)])),
-                ('age', models.IntegerField(validators=[django.core.validators.MinValueValidator(1), django.core.validators.MaxValueValidator(30)])),
-                ('date', models.DateField()),
-                ('description', models.TextField()),
-                ('gender', models.CharField(choices=[('ML', 'Male'), ('FM', 'Female'), ('UNK', 'Unknown')], default='ML', max_length=8)),
-                ('founder', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='founder_pet', to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "type",
+                    models.CharField(
+                        choices=[
+                            ("CT", "Cat"),
+                            ("DG", "Dog"),
+                            ("RB", "Rabbit"),
+                            ("BD", "Bird"),
+                            ("TR", "Tortoise"),
+                            ("OTH", "Other"),
+                        ],
+                        default="CT",
+                        max_length=8,
+                    ),
+                ),
+                (
+                    "image",
+                    models.ImageField(
+                        default="media/pet/img.png", upload_to="media"
+                    ),
+                ),
+                (
+                    "latitude",
+                    models.FloatField(
+                        validators=[
+                            django.core.validators.MinValueValidator(-90),
+                            django.core.validators.MaxValueValidator(90),
+                        ]
+                    ),
+                ),
+                (
+                    "longitude",
+                    models.FloatField(
+                        validators=[
+                            django.core.validators.MinValueValidator(-180),
+                            django.core.validators.MaxValueValidator(180),
+                        ]
+                    ),
+                ),
+                (
+                    "age",
+                    models.IntegerField(
+                        validators=[
+                            django.core.validators.MinValueValidator(1),
+                            django.core.validators.MaxValueValidator(30),
+                        ]
+                    ),
+                ),
+                ("date", models.DateField()),
+                ("description", models.TextField()),
+                (
+                    "gender",
+                    models.CharField(
+                        choices=[
+                            ("ML", "Male"),
+                            ("FM", "Female"),
+                            ("UNK", "Unknown"),
+                        ],
+                        default="ML",
+                        max_length=8,
+                    ),
+                ),
+                (
+                    "founder",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="founder_pet",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
             options={
-                'abstract': False,
+                "abstract": False,
             },
         ),
     ]

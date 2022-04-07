@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import { Link, useNavigate  } from 'react-router-dom'
 import axiosInstance from "../../utils/axiosApi";
-import {useDispatch, useSelector} from "react-redux";
-import { Paper, Grid, Avatar, Typography, Button, Container, Alert, Box, FormControlLabel, Checkbox  } from '@mui/material';
+import {useDispatch} from "react-redux";
+import { Grid, Avatar, Typography, Button, Container, Alert, Box  } from '@mui/material';
 import LockIcon from '@mui/icons-material/Lock';
 
 import TextField from "../../components/Form/TextField";
@@ -111,4 +111,3 @@ const LoginPage = () => {
 }
 
 export default LoginPage;
-

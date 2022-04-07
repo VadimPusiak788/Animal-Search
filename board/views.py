@@ -1,14 +1,17 @@
 from rest_framework import generics
-from rest_framework.permissions import AllowAny
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework import status
 from django.http import Http404
 
 from board.models import LostPet, FounderPet
-from board.serializers import (LostPetSerializer, FounderPetSerializer, FounderPetSerializerDetail,
-                               CreateFounderPetSerializer, CreateLostPetSerializer)
+from board.serializers import (
+    LostPetSerializer,
+    FounderPetSerializer,
+    CreateFounderPetSerializer,
+    CreateLostPetSerializer,
+)
 
 
 class LostPetView(generics.ListCreateAPIView):
@@ -34,7 +37,6 @@ class LostPetDetailView(generics.RetrieveAPIView):
 
 
 class CreateFoundPetView(APIView):
-
     def post(self, request):
         serializer = CreateFounderPetSerializer(data=request.data)
         if serializer.is_valid():
@@ -45,7 +47,6 @@ class CreateFoundPetView(APIView):
 
 
 class CreateLostPetView(APIView):
-
     def post(self, request):
         serializer = CreateLostPetSerializer(data=request.data)
         if serializer.is_valid():
@@ -77,7 +78,6 @@ class UserRequestFoundView(generics.ListAPIView):
 
 
 class UserRequestDetailFoundView(APIView):
-
     def get_object(self, pk):
         try:
             return FounderPet.objects.get(pk=pk)
@@ -88,11 +88,15 @@ class UserRequestDetailFoundView(APIView):
 
         found_pet = self.get_object(pk=pk)
 
-        update_serializer = CreateFounderPetSerializer(found_pet, data=request.data, partial=True)
+        update_serializer = CreateFounderPetSerializer(
+            found_pet, data=request.data, partial=True
+        )
         if update_serializer.is_valid():
             update_serializer.save()
 
-            return Response(update_serializer.data, status=status.HTTP_202_ACCEPTED)
+            return Response(
+                update_serializer.data, status=status.HTTP_202_ACCEPTED
+            )
 
         return Response(
             update_serializer.errors, status=status.HTTP_400_BAD_REQUEST
@@ -107,7 +111,6 @@ class UserRequestDetailFoundView(APIView):
 
 
 class UserRequestDetailLostView(APIView):
-
     def get_object(self, pk):
         try:
             return LostPet.objects.get(pk=pk)
@@ -118,11 +121,15 @@ class UserRequestDetailLostView(APIView):
 
         lost_pet = self.get_object(pk=pk)
 
-        update_serializer = CreateLostPetSerializer(lost_pet, data=request.data, partial=True)
+        update_serializer = CreateLostPetSerializer(
+            lost_pet, data=request.data, partial=True
+        )
         if update_serializer.is_valid():
             update_serializer.save()
 
-            return Response(update_serializer.data, status=status.HTTP_202_ACCEPTED)
+            return Response(
+                update_serializer.data, status=status.HTTP_202_ACCEPTED
+            )
 
         return Response(
             update_serializer.errors, status=status.HTTP_400_BAD_REQUEST
@@ -134,5 +141,3 @@ class UserRequestDetailLostView(APIView):
         lost_pet.delete()
 
         return Response(status=status.HTTP_200_OK)
-
-

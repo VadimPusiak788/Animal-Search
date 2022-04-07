@@ -2,14 +2,12 @@ import React, {useState, useEffect} from 'react';
 import {useSelector} from "react-redux";
 
 import {
-    FormLabel,
     FormControl,
-    FormControlLabel,
-    Radio,
     Grid,
     Button,
     Paper,
-    Typography, Alert, Box,
+    Typography,
+    Box
 } from '@mui/material';
 
 import DateFnsUtils from '@date-io/date-fns';
@@ -23,8 +21,7 @@ import CreateMapLost from "../../map/CreateMapLost";
 import axiosInstance from "../../../utils/axiosApi";
 import {useNavigate} from "react-router-dom";
 import moment from "moment";
-import {useForm, FormProvider, Controller, useFormState} from "react-hook-form";
-import CreateMapFound from "../../map/CreateMapFound";
+import {useForm, FormProvider, Controller} from "react-hook-form";
 
 
 

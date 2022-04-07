@@ -6,18 +6,28 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('board', '0002_alter_lostpet_owner'),
+        ("board", "0002_alter_lostpet_owner"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='founderpet',
-            name='image',
-            field=models.ImageField(blank=True, default='media/pet/img.png', null=True, upload_to='media'),
+            model_name="founderpet",
+            name="image",
+            field=models.ImageField(
+                blank=True,
+                default="media/pet/img.png",
+                null=True,
+                upload_to="media",
+            ),
         ),
         migrations.AlterField(
-            model_name='lostpet',
-            name='image',
-            field=models.ImageField(blank=True, default='media/pet/img.png', null=True, upload_to='media'),
+            model_name="lostpet",
+            name="image",
+            field=models.ImageField(
+                blank=True,
+                default="media/pet/img.png",
+                null=True,
+                upload_to="media",
+            ),
         ),
     ]

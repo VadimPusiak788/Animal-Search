@@ -20,19 +20,21 @@ from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
 
-react_routes = getattr(settings, 'REACT_ROUTES', [])
+react_routes = getattr(settings, "REACT_ROUTES", [])
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', TemplateView.as_view(template_name='index.html')),
-    path('api/main/', include('board.urls')),
-    path('api/auth/', include('account.urls')),
-    path('api-auth/', include('rest_framework.urls')),
+    path("admin/", admin.site.urls),
+    path("", TemplateView.as_view(template_name="index.html")),
+    path("api/main/", include("board.urls")),
+    path("api/auth/", include("account.urls")),
+    path("api-auth/", include("rest_framework.urls")),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 for route in react_routes:
     urlpatterns += [
-        path('{}'.format(route), TemplateView.as_view(template_name='index.html'))
+        path(
+            "{}".format(route), TemplateView.as_view(template_name="index.html")
+        )
     ]

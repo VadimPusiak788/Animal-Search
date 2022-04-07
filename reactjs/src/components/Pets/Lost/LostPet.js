@@ -1,11 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {useParams} from "react-router-dom";
 import axiosInstance from "../../../utils/axiosApi";
-import { styled } from '@mui/material/styles';
 
-import {List, ListItem, ListItemText, Typography, Grid, Box, Paper, ButtonBase} from '@mui/material';
+import {Typography, Grid, Box, Paper} from '@mui/material';
 import MapDisplayLost from "../../map/MapDisplayLost";
-import MapDisplayFound from "../../map/MapDisplayFound";
 
 
 const LostPet = () => {
@@ -136,4 +134,3 @@ const LostPet = () => {
 }
 
 export default LostPet;
-

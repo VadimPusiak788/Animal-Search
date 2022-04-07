@@ -2,7 +2,6 @@ import {useEffect, useState} from 'react'
 import {
     CircleMarker,
     MapContainer,
-    Marker,
     Popup,
     TileLayer,
     useMapEvents,

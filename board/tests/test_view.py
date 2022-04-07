@@ -10,7 +10,6 @@ from account.tests.factory import UserFactory
 
 
 class TestFoundPetView(APITestCase):
-
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -22,8 +21,8 @@ class TestFoundPetView(APITestCase):
         cls.client = APIClient()
 
     def test_list_found_pet(self):
-        list_url = reverse('founder_pet')
-        response = self.client.get(list_url, format='json')
+        list_url = reverse("founder_pet")
+        response = self.client.get(list_url, format="json")
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
@@ -34,17 +33,16 @@ class TestFoundPetView(APITestCase):
     def test_detail_found_pet(self):
         found_pet = FounderPet.objects.get(id=1)
 
-        detail_url = reverse('detail_founder_pet', kwargs={'pk': found_pet.id})
+        detail_url = reverse("detail_founder_pet", kwargs={"pk": found_pet.id})
 
-        response = self.client.get(detail_url, format='json')
+        response = self.client.get(detail_url, format="json")
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-        self.assertEqual(response.data['description'], found_pet.description)
+        self.assertEqual(response.data["description"], found_pet.description)
 
 
 class TestMyFoundPet(APITestCase):
-
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -57,29 +55,33 @@ class TestMyFoundPet(APITestCase):
         cls.token = Token.objects.create(user=user_saved)
 
     def test_create_found_pet(self):
-        post_url = reverse('create_found_pet')
-        self.client.credentials(HTTP_AUTHORIZATION='Token ' + self.token.key)
+        post_url = reverse("create_found_pet")
+        self.client.credentials(HTTP_AUTHORIZATION="Token " + self.token.key)
 
         found_pet_dict = {
-            'type':  self.found_pet_object.type,
-            'latitude':  self.found_pet_object.latitude,
-            'longitude':  self.found_pet_object.longitude,
-            'age': self.found_pet_object.age,
-            'date': self.found_pet_object.date,
-            'description': self.found_pet_object.description,
-            'gender': self.found_pet_object.gender,
+            "type": self.found_pet_object.type,
+            "latitude": self.found_pet_object.latitude,
+            "longitude": self.found_pet_object.longitude,
+            "age": self.found_pet_object.age,
+            "date": self.found_pet_object.date,
+            "description": self.found_pet_object.description,
+            "gender": self.found_pet_object.gender,
         }
 
-        response = self.client.post(post_url, found_pet_dict, format='multipart')
+        response = self.client.post(
+            post_url, found_pet_dict, format="multipart"
+        )
 
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
         self.assertEqual(FounderPet.objects.count(), 2)
 
     def test_delete_found_pet_by_founder(self):
-        self.client.credentials(HTTP_AUTHORIZATION='Token ' + self.token.key)
+        self.client.credentials(HTTP_AUTHORIZATION="Token " + self.token.key)
 
-        delete_url = reverse('request_user_found_detail', kwargs={'pk': self.found_pet_saved.id})
+        delete_url = reverse(
+            "request_user_found_detail", kwargs={"pk": self.found_pet_saved.id}
+        )
 
         response = self.client.delete(delete_url)
 
@@ -88,18 +90,22 @@ class TestMyFoundPet(APITestCase):
         self.assertEqual(FounderPet.objects.count(), 0)
 
     def test_update_found_pet_by_founder(self):
-        self.client.credentials(HTTP_AUTHORIZATION='Token ' + self.token.key)
+        self.client.credentials(HTTP_AUTHORIZATION="Token " + self.token.key)
 
-        update_url = reverse('request_user_found_detail', kwargs={'pk': self.found_pet_saved.id})
+        update_url = reverse(
+            "request_user_found_detail", kwargs={"pk": self.found_pet_saved.id}
+        )
 
         found_pet_dict_update = {
-            'type': self.found_pet_object.type,
-            'latitude': self.found_pet_object.latitude,
-            'longitude': self.found_pet_object.longitude,
-            'age': self.found_pet_object.age,
-            'description': self.found_pet_object.description,
+            "type": self.found_pet_object.type,
+            "latitude": self.found_pet_object.latitude,
+            "longitude": self.found_pet_object.longitude,
+            "age": self.found_pet_object.age,
+            "description": self.found_pet_object.description,
         }
 
-        response = self.client.patch(update_url, found_pet_dict_update, format='multipart')
+        response = self.client.patch(
+            update_url, found_pet_dict_update, format="multipart"
+        )
 
         self.assertEqual(response.status_code, status.HTTP_202_ACCEPTED)
