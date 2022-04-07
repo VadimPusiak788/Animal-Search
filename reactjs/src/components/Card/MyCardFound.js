@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, CardHeader, CardContent, CardMedia, Typography, Button, CardActions, Stack} from '@mui/material';
+import {Card, CardContent, CardMedia, Typography, Button, CardActions, Stack} from '@mui/material';
 import { Link } from "react-router-dom";
 import DeleteIcon from '@mui/icons-material/Delete';
 import { red } from '@mui/material/colors';

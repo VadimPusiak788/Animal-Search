@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react'
+import {useState} from 'react'
 import {
   MapContainer,
   Marker,
@@ -6,7 +6,7 @@ import {
   TileLayer,
   useMapEvents,
 } from 'react-leaflet'
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 
 
 
